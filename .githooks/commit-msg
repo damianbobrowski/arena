@@ -1,0 +1,11 @@
+#!/bin/sh
+# Conventional Commits subject: type(scope)!: description
+subject=$(head -n 1 "$1")
+case "$subject" in
+  Merge\ *|Revert\ *|fixup!\ *|squash!\ *|amend!\ *) exit 0 ;;
+esac
+if ! printf '%s\n' "$subject" | grep -Eq '^(build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test)(\([a-z0-9@/._-]+\))?!?: .+'; then
+  echo "commit-msg: subject must follow Conventional Commits, e.g. 'feat(core): add runCommand'" >&2
+  echo "  got: $subject" >&2
+  exit 1
+fi

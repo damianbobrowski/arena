@@ -1,0 +1,28 @@
+{
+  "name": "@arena/app",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vp dev",
+    "build": "vp build",
+    "preview": "vp preview",
+    "test": "vp test",
+    "typecheck": "vue-tsc --noEmit"
+  },
+  "dependencies": {
+    "@arena/core": "workspace:*",
+    "@nanostores/vue": "catalog:",
+    "nanostores": "catalog:",
+    "vue": "catalog:"
+  },
+  "devDependencies": {
+    "@iconify-json/lucide": "catalog:",
+    "@types/node": "catalog:",
+    "@vitejs/plugin-vue": "catalog:",
+    "typescript": "catalog:typescript5",
+    "unocss": "catalog:",
+    "vite-plus": "catalog:",
+    "vue-tsc": "catalog:"
+  }
+}

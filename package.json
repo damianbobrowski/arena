@@ -4,8 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "ready": "vp check && vp run -r test && vp run -r build",
-    "dev": "vp run website#dev"
+    "prepare": "git config core.hooksPath .githooks 2>/dev/null || true",
+    "ready": "vp check && vp run -r typecheck && vp run -r test && vp run -r build",
+    "dev": "vp run @arena/app#dev"
   },
   "devDependencies": {
     "vite-plus": "catalog:"

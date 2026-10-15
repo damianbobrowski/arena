@@ -1,0 +1,6 @@
+#!/bin/sh
+# Format, lint and type-check .ts (vp check), type-check .vue (vue-tsc), run tests.
+set -e
+vp check
+vp run -r typecheck
+vp run -r test
